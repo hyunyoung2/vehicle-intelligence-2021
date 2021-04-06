@@ -42,11 +42,34 @@ def motion_model(position, mov, priors, map_size, stdev):
     # Initialize the position's probability to zero.
     position_prob = 0.0
 
+
+    # when motion_model function called, below is arguments
+    # Calculate probability of the vehicle being at position p
+    ###motion_prob = motion_model(
+    ###       pseudo_position, mov_per_timestep, priors,
+    ###       map_size, control_stdev)
+
+    ## What is the arguments of norm_pdf?
+    # Calculate normal (Gaussian) distribution probability.
+    # norm_pdf(x, m, s) returns the probability of a random variable
+    # havnig the value of x, assuming that the variable follows
+    # the Gaussian probability distribution with mean of m and
+    # standard deviation of s.
+    ###def norm_pdf(x, m, s):
+ 
     # TODO: Loop over state space for all possible prior positions,
     # calculate the probability (using norm_pdf) of the vehicle
     # moving to the current position from that prior.
     # Multiply this probability to the prior probability of
     # the vehicle "was" at that prior position.
+    ##position_prob = norm_pdf(priors, 1, stdev)    
+
+    for i in range(len(priors)):
+     
+        g = norm_pdf(position-i, 1, stdev)
+        position_prob += g * priors[i]
+ 
+
     return position_prob
 
 # Observation model (assuming independent Gaussian)
@@ -64,6 +87,15 @@ def observation_model(landmarks, observations, pseudo_ranges, stdev):
     #     d: observation distance
     #     mu: expected mean distance, given by pseudo_ranges
     #     sig: squared standard deviation of measurement
+
+    if observations == []:
+        distance_prob = 0.0
+    elif len(observations) > len(pseudo_ranges):
+        distance_prob = 0.0
+    else:
+          for i in range(len(observations)):
+              distance_prob *= norm_pdf(observations[i], pseudo_ranges[i], stdev)
+          
     return distance_prob
 
 # Normalize a probability distribution so that the sum equals 1.0.
