@@ -38,11 +38,14 @@ class KalmanFilter:
 
         ## the function to normalize phi into between -PI and +PI
         def norm_phi(angle):
+            
             angle = angle % (2 * np.pi)
+
             if angle > np.pi:
-                angle -= 2 * np.pi
-            return angle 
- 
+                 angle -= 2 * np.pi
+
+            return angle
+
         # h(x') function 
         def radar_h(x):
 
