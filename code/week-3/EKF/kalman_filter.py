@@ -39,31 +39,30 @@ class KalmanFilter:
         ## the function to normalize phi into between -PI and +PI
         def norm_phi(angle):
             
-            angle = angle % (2 * np.pi)
+            angle = angle % (2 * np.pi)  
 
-            if angle > np.pi:
-                 angle -= 2 * np.pi
-
+            if angle > np.pi: 
+                angle -= 2 * np.pi
+            
             return angle
 
         # h(x') function 
         def radar_h(x):
 
-            a = sqrt(x[0]**2+x[1]**2)
-            b = atan2(x[1], x[0])
-            c = (x[0]*x[2]+x[1]*x[3])/a
+            sqrt_x = sqrt(x[0]*x[0]+x[1]*x[1])
+            _atan_val = atan2(x[1], x[0])
+            row = (x[0]*x[2]+x[1]*x[3])/sqrt_x
 
             # 5. Normalize phi so that it is between -PI and +PI
-            b = norm_phi(b) 
+            atan_val = norm_phi(_atan_val) 
    
-            h_x = np.array([a,b,c])
+            h_x = np.array([sqrt_x, atan_val, row])
  
             return h_x
 
         ## 1. compute Jacobian Matrix H_j      
         H_j = Jacobian(self.x)
-              
-        
+                      
         ## 2. Calculate S = H_j*P'*H_j^T
         S = np.dot(np.dot(H_j, self.P), H_j.T) + self.R
 
@@ -76,6 +75,6 @@ class KalmanFilter:
         ## 6. Calculate new estimates
         self.x = self.x + np.dot(K, y)
 
-        I = np.eye(self.P.shape[0], self.P.shape[1])
+        I = np.eye(4)
         
         self.P = np.dot(I - np.dot(K, H_j), self.P)
