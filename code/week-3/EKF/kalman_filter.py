@@ -39,23 +39,22 @@ class KalmanFilter:
         ## the function to normalize phi into between -PI and +PI
         def norm_phi(angle):
             
-            angle = angle % (2 * np.pi)  
-
-            if angle > np.pi: 
-                angle -= 2 * np.pi
-            
+            if angle < 0:
+                angle *= -1
+                angle %= np.pi 
+                angle *= -1
+            else:
+                angle = angle % np.pi
+ 
             return angle
 
         # h(x') function 
         def radar_h(x):
 
             sqrt_x = sqrt(x[0]*x[0]+x[1]*x[1])
-            _atan_val = atan2(x[1], x[0])
+            atan_val = atan2(x[1], x[0])
             row = (x[0]*x[2]+x[1]*x[3])/sqrt_x
 
-            # 5. Normalize phi so that it is between -PI and +PI
-            atan_val = norm_phi(_atan_val) 
-   
             h_x = np.array([sqrt_x, atan_val, row])
  
             return h_x
@@ -72,9 +71,30 @@ class KalmanFilter:
         ## 4. Estimate y = z - h(x')
         y = z - radar_h(self.x)
 
+        ## 5. Normalize phi so that it is between -PI and +PI
+        _y_1 = norm_phi(y[1]) 
+        y[1] = _y_1
+        
         ## 6. Calculate new estimates
         self.x = self.x + np.dot(K, y)
 
         I = np.eye(4)
         
         self.P = np.dot(I - np.dot(K, H_j), self.P)
+
+
+if __name__ == "__main__":
+
+    ## the function to normalize phi into between -PI and +PI
+    def norm_phi(angle):
+            
+        angle = angle % (2 * np.pi)  
+
+        if angle > np.pi: 
+            angle -= 2 * np.pi
+            
+        return angle
+
+    print(norm_phi(-1.0))
+
+  
