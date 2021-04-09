@@ -172,7 +172,7 @@ class ParticleFilter:
                 exponent = pow((transformed_obs['x'] - single_landmark['x']), 2) / pow(std_landmark_x, 2) + pow((transformed_obs['y'] - single_landmark['y']), 2) /pow(std_landmark_y, 2)
 
                 obs_w = normalizer * math.exp((-0.5 * exponent))  
-                obs_w +=  1e-10 # avoid round-off to zero
+                obs_w +=  1e-25 # avoid round-off to zero
 
                 wt *= obs_w
                 
