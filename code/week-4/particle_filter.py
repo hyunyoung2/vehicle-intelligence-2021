@@ -162,7 +162,7 @@ class ParticleFilter:
                     if distance_min >= single_landmark_k[i]['dist']:
                         single_landmark = single_landmark_k[i]
 
-                print("Single_landmark: ", single_landmark)
+                ##print("Single_landmark: ", single_landmark)
                 ##// update weights using Multivariate Gaussian Distribution
                 ##// equation given in Transformations and Associations Quiz
 
@@ -176,7 +176,7 @@ class ParticleFilter:
 
                 wt *= obs_w
                 
-                print("Wt: ", wt)
+                ##print("Wt: ", wt)
 
             #weight_sum += wt
             p['w'] = wt
