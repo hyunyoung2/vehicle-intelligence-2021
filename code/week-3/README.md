@@ -55,7 +55,7 @@ Complete the implementation of EKF with sensor fusion by writing the function `u
 
 
 
-### The Resulting image of assingment
+### The resulting image of assingment
 
 ![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-3/EKF/ekf_example.png?raw=true)
 
