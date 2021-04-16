@@ -52,3 +52,10 @@ The program consists of five modules:
 ### Assignment
 
 Complete the implementation of EKF with sensor fusion by writing the function `update_ekf()` in the module `kalman_filter`. Details are given in class and instructions are included in comments.
+
+
+
+### The Resulting image of assingment
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-3/EKF/ekf_example.png?raw=true)
+
