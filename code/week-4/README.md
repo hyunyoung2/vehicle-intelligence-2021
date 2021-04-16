@@ -28,3 +28,9 @@ while a reasonable implementation of the above mentioned methods (assignments) w
 ![Particle Filter Example][example]
 
 Carefully read comments in the two method bodies and write Python code that does the job.
+
+
+
+## The resulting image of assingment
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-4/particle_filter.png?raw=true)
