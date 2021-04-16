@@ -24,6 +24,6 @@ If you run the program (`main.py`) without any modification to the code, it will
 
 
 
-## The image of result of Assignment 
+## The Resulting image of assingment
 
 ![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-2/markov_localization.png?raw=true)
