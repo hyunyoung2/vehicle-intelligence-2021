@@ -31,6 +31,21 @@ Carefully read comments in the two method bodies and write Python code that does
 
 
 
-## The resulting image of assingment
+## Assignment result 
+
+If you want to run this assignment, type in as follow:
+
+```
+python3 run.py
+```
+
+I make this assignment work, filling in the TODO in the file, particle_filter.py . 
+
+-  def update_weights(self, sensor_range, std_landmark_x, std_landmark_y,
+                       observations, map_landmarks): This function is to update the weights of each particle using a multi-variate Gaussian distribution.
+
+-  def resample(self): This funciton is to resample particles with replacement with probability proportional to their weights.
+
+The below is the resulting image to be captured when this assignmet is implemented.
 
 ![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-4/particle_filter-1.png?raw=true)
