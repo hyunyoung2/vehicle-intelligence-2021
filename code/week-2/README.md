@@ -34,9 +34,9 @@ python3 main.py
 
 I make this assignment work, filling in the TODO in the file, markov_localizer.py. 
 
-- def motion_model(position, mov, priors, map_size, stdev): This function is Motion model following 1-D Gaussian distribution
+- **def motion_model(position, mov, priors, map_size, stdev)**: This function is Motion model following 1-D Gaussian distribution
 
-- def observation_model(landmarks, observations, pseudo_ranges, stdev): This funciton Observation model following indepedent Gaussian
+- **def observation_model(landmarks, observations, pseudo_ranges, stdev)**: This funciton Observation model following indepedent Gaussian
 
 The below is the resulting image to be captured when this assignmet is implemented.
 
