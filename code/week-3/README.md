@@ -57,5 +57,17 @@ Complete the implementation of EKF with sensor fusion by writing the function `u
 
 ### The resulting image of assingment
 
+If you want to run this assignment, type in as follow:
+
+```
+python3 run.py
+```
+
+I make this assignment work, filling in the TODO in the file, kalman_filter.py under EKF directory. 
+
+-   def update_ekf(self, z): This function implement EKF update for radar measurments.
+
+The below is the resulting image to be captured when this assignmet is implemented.
+
 ![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-3/EKF/ekf_example.png?raw=true)
 
