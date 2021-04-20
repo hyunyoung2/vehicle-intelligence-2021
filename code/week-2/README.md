@@ -24,7 +24,7 @@ If you run the program (`main.py`) without any modification to the code, it will
 
 
 
-## The resulting image of assingment
+## Assignment result 
 
 If you want to run this assignment, type in as follow:
 
