@@ -64,7 +64,7 @@ python3 run.py
 
 I make this assignment work, filling in the TODO in the file, kalman_filter.py under EKF directory. 
 
--   def update_ekf(self, z): This function implement EKF update for radar measurments.
+-  **def update_ekf(self, z)**: This function implement EKF update for radar measurments.
 
 The below is the resulting image to be captured when this assignmet is implemented.
 
