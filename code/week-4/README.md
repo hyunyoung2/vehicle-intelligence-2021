@@ -41,10 +41,9 @@ python3 run.py
 
 I make this assignment work, filling in the TODO in the file, particle_filter.py . 
 
--  def update_weights(self, sensor_range, std_landmark_x, std_landmark_y,
-                       observations, map_landmarks): This function is to update the weights of each particle using a multi-variate Gaussian distribution.
+- **def update_weights(self, sensor_range, std_landmark_x, std_landmark_y, observations, map_landmarks)**: This function is to update the weights of each particle using a multi-variate Gaussian distribution.
 
--  def resample(self): This funciton is to resample particles with replacement with probability proportional to their weights.
+- **def resample(self)**: This funciton is to resample particles with replacement with probability proportional to their weights.
 
 The below is the resulting image to be captured when this assignmet is implemented.
 
