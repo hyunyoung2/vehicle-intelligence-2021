@@ -38,3 +38,19 @@ This example is intended to illustrate the algorithm's capability of generating 
 because of the prohibitively high cost associated with a left turn.
 
 You are highly encouraged to experiment with different (more complex) maps and different cost settings for each type of action.
+
+## Assignment result 
+
+If you want to run this assignment, type in as follow:
+
+```
+python3 assigment.py
+```
+
+I make this assignment work, filling in the TODO in the file, assignment.py . 
+
+- **def optimum_policy_2D(grid, init, goal, cost)**
+
+The below is the resulting image to be captured when this assignmet is implemented.
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-5/astar_result.png?raw=true)
