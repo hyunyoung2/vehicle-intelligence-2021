@@ -96,9 +96,9 @@ def optimum_policy_2D(grid, init, goal, cost):
     # TODO: implement code.
     x = init[1]
     y = init[0]
-    orientation = init[2]
+    o = init[2]
     
-    policy_st = policy[(orientation,y,x)]
+    policy_st = policy[(o,y,x)]
     
     if policy_st == action[0]:
         policy_name_st = action_name[0]
@@ -110,19 +110,19 @@ def optimum_policy_2D(grid, init, goal, cost):
         policy_name_st = "*"
 
     policy2D[(y,x)] = policy_name_st
-    while policy[(orientation,y,x)] != -999:
-        if policy[(orientation,y,x)] == action[1]:
-            o2 = orientation
-        elif policy[(orientation,y,x)] == action[0]:
-            o2 = (orientation - 1) % 4
-        elif policy[(orientation,y,x)] == action[2]:
-            o2 = (orientation + 1) % 4
-        x = x + forward[o2][1]
-        y = y + forward[o2][0]
+    while policy[(o,y,x)] != -999:
+        if policy[(o,y,x)] == action[1]:
+            o2 = o
+        elif policy[(o,y,x)] == action[0]:
+            o2 = (o - 1) % 4
+        elif policy[(o,y,x)] == action[2]:
+            o2 = (o + 1) % 4
+        x += forward[o2][1]
+        y += forward[o2][0]
 
-        orientation = o2
+        o = o2
         
-        policy_temp = policy[(orientation,y,x)]
+        policy_temp = policy[(o,y,x)]
         
         if policy_temp == action[0]:
             policy_name = action_name[0]
