@@ -38,12 +38,12 @@ class HybridAStar:
             # between 0 and 2 * PI.
             # Check validity and then add to the next_states list.
 
-            d = math.pi / 180.0 * delta_t
-            o = self.speed / self.length * math.tan(d)
-            theta2 = theta + o
+            degree = math.pi / 180.0 * delta_t
+            temp_theta = self.speed / self.length * math.tan(degree)
+            new_theta = theta + temp_theta
 
-            if theta2 < 0:
-                theta2 += 2*math.pi
+            if new_theta < 0:
+                new_theta += 2*math.pi
             x2 = x + self.speed * math.cos(theta)
             y2 = y + self.speed * math.sin(theta)
             s2 = {}
@@ -51,7 +51,7 @@ class HybridAStar:
             s2['g'] = g2
             s2['x'] = x2
             s2['y'] = y2
-            s2['t'] = theta2
+            s2['t'] = new_theta
             next_states.append(s2)
 
         return next_states
@@ -125,8 +125,8 @@ class HybridAStar:
         # given theta represented in radian. Note that the calculation
         # should partition 360 degrees (2 * PI rad) into different
         # cells whose number is given by NUM_THETA_CELLS.
-        theta_ = math.fmod((theta + 2 * math.pi),2 * math.pi)
-        sn = int((round(theta_ * self.NUM_THETA_CELLS / (2*math.pi))) % self.NUM_THETA_CELLS);
+        _theta = math.fmod((theta + 2 * math.pi),2 * math.pi)
+        sn = int((round(_theta * self.NUM_THETA_CELLS / (2*math.pi))) % self.NUM_THETA_CELLS);
         return sn
 
     # Calculate the index of the grid cell based on the vehicle's position.
