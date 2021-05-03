@@ -74,5 +74,3 @@ python3 evaluate_ptg.py
 After running the command above, the result is as follows:
 
 ![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-7/PTG/week7.png?raw=true)
-
-
