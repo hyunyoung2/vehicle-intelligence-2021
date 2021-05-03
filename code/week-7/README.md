@@ -53,3 +53,26 @@ Your job in this experiment is:
 2. to derive an appropriate set of weights applied to the cost functions; the mechanism to calculate the cost for a trajectory and selecting one with the minimum cost is the same as described in the previous (Week 6) lecture.
 
 Experiment by tweaking the relative weight for each cost function. It will also be very interesting to define your own cost metric and implement it using the information associated with trajectories.
+
+## Assignment result 
+
+For Hybrid A* Algorithm, If you want to run this assignment, type in as follow:
+
+```
+python3 main.py
+```
+After running the command above, the result is as follows:
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-7/hybrid_a_star/week-7.png?raw=true)
+
+For trajectory generation, If you want to run this assignment, type in as follow:
+
+```
+python3 evaluate_ptg.py
+```
+
+After running the command above, the result is as follows:
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-7/PTG/week7.png?raw=true)
+
+
