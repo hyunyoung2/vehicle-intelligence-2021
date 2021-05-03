@@ -72,3 +72,24 @@ You are also invited to experiment with a number of different simulation setting
 and so on.
 
 Remember that our state machine should be geared towards reaching the goal in an *efficient* manner. Try to compare a behaviour that switches to the goal lane as soon as possible (note that the goal position is in the slowest lane in the given setting) and one that follows a faster lane and move to the goal lane as the remaining distance decreases. Observe different behaviour taken by the ego vehicle when different weights are given to different cost functions, and also when other cost metrics (additional cost functions) are used.
+
+## Assignment result 
+
+For GNB, If you want to run this assignment, type in as follow:
+
+```
+python3 prediction.py
+```
+After running the command above, the result is **You got 00.00 percent correct**
+
+For BP, If you want to run this assignment, type in as follow:
+
+```
+python3 simulate_behavior.py
+```
+
+After running the command above, the result is as follows:
+
+![](https://github.com/hyunyoung2/vehicle-intelligence-2021/blob/master/code/week-6/BP/week6.png?raw=true)
+
+
